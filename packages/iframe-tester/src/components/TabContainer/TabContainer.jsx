@@ -17,7 +17,8 @@ function TabPanel(props) {
       {value === index && (
         <Box
           sx={{
-            p: 3,
+            paddingTop: 3,
+            paddingLeft: 1,
             width: "100%",
             height: "100%",
             overflowY: "scroll",
