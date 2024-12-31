@@ -6,6 +6,8 @@ import {
   IFrame,
   EmptyState,
   ConfirmationDialog,
+  FullWidthCanvas,
+  SideBarCanvas,
 } from "../../components";
 import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
@@ -17,6 +19,7 @@ function IFrameApp() {
     height: "100%",
     width: "100%",
     border: "1px solid black",
+    canvas: "Blank",
   };
 
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -61,14 +64,38 @@ function IFrameApp() {
           onConfirm={() => handleImportDialogClose(true)}
         />
 
-        <IFrame
-          url={settings.url}
-          iFrameProps={{
-            height: settings.height,
-            width: settings.width,
-            style: { border: settings.border },
-          }}
-        />
+        {settings.url && settings.canvas === "Blank" && (
+          <IFrame
+            url={settings.url}
+            iFrameProps={{
+              height: settings.height,
+              width: settings.width,
+              style: { border: settings.border },
+            }}
+          />
+        )}
+
+        {settings.url && settings.canvas === "Full Width" && (
+          <FullWidthCanvas
+            url={settings.url}
+            iFrameProps={{
+              height: settings.height,
+              width: settings.width,
+              style: { border: settings.border },
+            }}
+          />
+        )}
+
+        {settings.url && settings.canvas === "Sidebar" && (
+          <SideBarCanvas
+            url={settings.url}
+            iFrameProps={{
+              height: settings.height,
+              width: settings.width,
+              style: { border: settings.border },
+            }}
+          />
+        )}
 
         {!settings.url && <EmptyState />}
       </Box>
