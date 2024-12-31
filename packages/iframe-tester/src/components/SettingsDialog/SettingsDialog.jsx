@@ -12,6 +12,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import { TabContainer } from "../../components";
 import FrameSettings from "./FrameSettings";
 import Export from "./Export";
+import Canvas from "./Canvas";
 
 function SettingsDialog({ open, onClose, settings, setSettings }) {
   const [localSettings, setLocalSettings] = useState(settings);
@@ -61,6 +62,15 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
                 />
               ),
               label: "iFrame Settings",
+            },
+            {
+              content: (
+                <Canvas
+                  settings={localSettings}
+                  setSettings={setLocalSettings}
+                />
+              ),
+              label: "Canvas",
             },
             ...(settings.url
               ? [
