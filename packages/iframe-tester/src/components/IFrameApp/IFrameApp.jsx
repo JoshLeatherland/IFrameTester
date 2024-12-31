@@ -61,7 +61,14 @@ function IFrameApp() {
           onConfirm={() => handleImportDialogClose(true)}
         />
 
-        <IFrame url={settings.url} iFrameProps={settings} />
+        <IFrame
+          url={settings.url}
+          iFrameProps={{
+            height: settings.height,
+            width: settings.width,
+            style: { border: settings.border },
+          }}
+        />
 
         {!settings.url && <EmptyState />}
       </Box>
