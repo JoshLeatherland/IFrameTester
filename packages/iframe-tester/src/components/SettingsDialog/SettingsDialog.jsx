@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { TabContainer } from "../../components";
 import FrameSettings from "./FrameSettings";
+import Export from "./Export";
 
 function SettingsDialog({ open, onClose, settings, setSettings }) {
   const [localSettings, setLocalSettings] = useState(settings);
@@ -18,6 +19,22 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
   useEffect(() => {
     setLocalSettings(settings);
   }, [settings]);
+
+  const handleSettingsSave = () => {
+    const url = localSettings.url;
+
+    if (url) {
+      const formattedUrl =
+        url.startsWith("http://") || url.startsWith("https://")
+          ? url
+          : `https://${url}`;
+
+      localSettings.url = formattedUrl;
+    }
+
+    setSettings(localSettings);
+    onClose();
+  };
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
@@ -40,10 +57,19 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
                 <FrameSettings
                   settings={localSettings}
                   setSettings={setLocalSettings}
+                  onEnterKeyDown={handleSettingsSave}
                 />
               ),
               label: "iFrame Settings",
             },
+            ...(settings.url
+              ? [
+                  {
+                    content: <Export settings={settings} />,
+                    label: "Export",
+                  },
+                ]
+              : []),
           ]}
         />
       </DialogContent>
@@ -51,24 +77,7 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
         <Button onClick={onClose} color="secondary">
           Close
         </Button>
-        <Button
-          onClick={() => {
-            const url = localSettings.url;
-
-            if (url) {
-              const formattedUrl =
-                url.startsWith("http://") || url.startsWith("https://")
-                  ? url
-                  : `https://${url}`;
-
-              localSettings.url = formattedUrl;
-            }
-
-            setSettings(localSettings);
-            onClose();
-          }}
-          color="primary"
-        >
+        <Button onClick={handleSettingsSave} color="primary">
           Save
         </Button>
       </DialogActions>
