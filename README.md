@@ -39,6 +39,6 @@ A simple tool designed to help developers and designers preview their websites o
 - **Customizable Canvas:** Choose from templates resembling real-world page layouts (e.g., blogs, dashboards, or landing pages) instead of a plain background.
 - **Multi-Language Support:** Enable localization to support different languages and in-app language switching.
 
-## Access
+## Demo
 
 Experience the application firsthand by visiting the deployed version [here](https://joshleatherland.github.io/IFrameTester/).
