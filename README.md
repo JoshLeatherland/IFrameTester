@@ -32,12 +32,14 @@ A simple tool designed to help developers and designers preview their websites o
 - Simple, intuitive UI to quickly test different configurations.
 - Responsive design ensures seamless testing on all device sizes.
 - Save iFrame configurations as a Data URL or share them via QR code for mobile testing.
+- Multi-language support, supporting English, Spanish, German and French.
+- The canvas can easily toggle between a blank page, a mock full-width layout, or a sidebar configuration, offering flexible design options to suit various needs.
 
 ## Future Enhancements
 
 - ~~**Export and Share Configurations:** Save iframe configurations as a Data URL or share them via QR code for mobile testing.~~
-- **Customizable Canvas:** Choose from templates resembling real-world page layouts (e.g., blogs, dashboards, or landing pages) instead of a plain background.
-- **Multi-Language Support:** Enable localization to support different languages and in-app language switching.
+  ~~- **Customizable Canvas:** Choose from templates resembling real-world page layouts (e.g., blogs, dashboards, or landing pages) instead of a plain background.~~
+  ~~- **Multi-Language Support:** Enable localization to support different languages and in-app language switching.~~
 
 ## Demo
 

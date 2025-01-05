@@ -8,6 +8,7 @@ import {
   useTheme,
 } from "@mui/material";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 function Canvas({ settings, setSettings }) {
   const handleSelect = (value) => {
@@ -30,20 +31,24 @@ function Canvas({ settings, setSettings }) {
     padding: "1em",
   });
 
+  const { t, ready } = useTranslation();
+
+  if (!ready) return <div>{t("shared.loading")}</div>;
+
   return (
     <Container maxWidth="md">
       <Typography variant="h6" mb={2} gutterBottom align="center">
-        Select Your Canvas Layout
+        {t("pages.settings.tabs.canvas.title")}
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} sm={4}>
           <CardActionArea onClick={() => handleSelect("Blank")}>
             <Box sx={cardStyles(settings.canvas === "Blank")}>
               <Typography variant="h6" gutterBottom>
-                Blank
+                {t("pages.settings.tabs.canvas.blank")}
               </Typography>
               <Typography variant="body2" color="textSecondary">
-                The iFrame will be rendered on a completley blank page.
+                {t("pages.settings.tabs.canvas.blankText")}
               </Typography>
             </Box>
           </CardActionArea>
@@ -53,11 +58,10 @@ function Canvas({ settings, setSettings }) {
           <CardActionArea onClick={() => handleSelect("Full Width")}>
             <Box sx={cardStyles(settings.canvas === "Full Width")}>
               <Typography variant="h6" gutterBottom>
-                Full Width
+                {t("pages.settings.tabs.canvas.fullWidth")}
               </Typography>
               <Typography variant="body2" color="textSecondary">
-                The iFrame will be placed in the middle of a pre-built demo
-                page, which can take up the full width of the page.
+                {t("pages.settings.tabs.canvas.fullWidthText")}
               </Typography>
             </Box>
           </CardActionArea>
@@ -67,11 +71,10 @@ function Canvas({ settings, setSettings }) {
           <CardActionArea onClick={() => handleSelect("Sidebar")}>
             <Box sx={cardStyles(settings.canvas === "Sidebar")}>
               <Typography variant="h6" gutterBottom>
-                Sidebar
+                {t("pages.settings.tabs.canvas.sidebar")}
               </Typography>
               <Typography variant="body2" color="textSecondary">
-                The iFrame will be placed in the middle of a pre-built demo
-                page, which can take up the full sidebar of the page.
+                {t("pages.settings.tabs.canvas.sidebarText")}
               </Typography>
             </Box>
           </CardActionArea>
@@ -84,7 +87,10 @@ function Canvas({ settings, setSettings }) {
           color="textSecondary"
           style={{ marginTop: "20px" }}
         >
-          Current Selection: <strong>{settings.canvas}</strong>
+          {t("pages.settings.tabs.canvas.currentSelection")}:{" "}
+          <strong>
+            {t(`pages.settings.tabs.canvas.modes.${settings.canvas}`)}
+          </strong>
         </Typography>
       )}
     </Container>

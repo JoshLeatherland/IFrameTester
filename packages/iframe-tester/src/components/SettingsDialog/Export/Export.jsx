@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import { encodeData } from "../../../utils/base64";
 import { copyToClipboard } from "../../../utils/clipboard";
 import { QRCodeSVG } from "qrcode.react";
+import { useTranslation } from "react-i18next";
 
 function Export({ settings }) {
   const [shareUrl, setShareUrl] = useState("");
@@ -32,16 +33,17 @@ function Export({ settings }) {
     }
   }, [open]);
 
+  const { t, ready } = useTranslation();
+
+  if (!ready) return <div>{t("shared.loading")}</div>;
+
   return (
     <Container disableGutters>
       <Typography variant="body1" gutterBottom>
-        You can share your configuration using the options below. Either copy
-        the URL or scan the QR code to view your setup exactly as you see it.
+        {t("pages.settings.tabs.export.description")}
       </Typography>
       <Alert severity="info" sx={{ marginBottom: 2, marginTop: 2 }}>
-        Please note that any changes made by the person opening the link will
-        only apply to their own view, and will not affect your view. Likewise,
-        any changes you make will not be reflected in the shared link.
+        {t("pages.settings.tabs.export.alert")}
       </Alert>
 
       <Box
@@ -52,11 +54,11 @@ function Export({ settings }) {
       >
         <Box flex={1}>
           <Typography variant="h6" gutterBottom>
-            Option 1: Copy the URL
+            {t("pages.settings.tabs.export.option1")}
           </Typography>
           <Box display="flex">
             <TextField
-              label="Shareable URL"
+              label={t("pages.settings.tabs.export.shareableUrl")}
               variant="outlined"
               fullWidth
               value={shareUrl}
@@ -66,7 +68,7 @@ function Export({ settings }) {
               margin="normal"
               sx={{ marginRight: 1 }}
             />
-            <Tooltip title="Copy URL to clipboard">
+            <Tooltip title={t("pages.settings.tabs.export.clipboard")}>
               <IconButton
                 onClick={() => copyToClipboard(shareUrl)}
                 color="primary"
@@ -80,13 +82,13 @@ function Export({ settings }) {
             color="textSecondary"
             sx={{ marginTop: 1 }}
           >
-            Use this link to share your configuration.
+            {t("pages.settings.tabs.export.urlHelper")}
           </Typography>
         </Box>
 
         <Box flex={1} textAlign="center">
           <Typography variant="h6" gutterBottom>
-            Option 2: Scan the QR Code
+            {t("pages.settings.tabs.export.option2")}
           </Typography>
           <QRCodeSVG
             value={shareUrl}
@@ -100,7 +102,7 @@ function Export({ settings }) {
             color="textSecondary"
             sx={{ marginTop: 2 }}
           >
-            Scan this code with your phone to view the configuration.
+            {t("pages.settings.tabs.export.qrHelper")}
           </Typography>
         </Box>
       </Box>
