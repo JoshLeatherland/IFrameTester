@@ -1,0 +1,63 @@
+{
+  "translation": {
+    "shared": {
+      "loading": "Loading, please wait...",
+      "appTitle": "iFrame Tester",
+      "close": "Close",
+      "save": "Save"
+    },
+    "languages": {
+      "en": "English",
+      "es": "Spanish",
+      "fr": "French",
+      "de": "German"
+    },
+    "pages": {
+      "blankCanvas": {
+        "welcome": "Welcome to the iFrame Testing App!",
+        "noFrame": "It looks like you haven't set up a URL for testing your iFrame yet.",
+        "getStarted": "To get started, click the Settings icon in the top-right corner and configure your URL."
+      },
+      "settings": {
+        "title": "Settings",
+        "tabs": {
+          "iframeSettings": {
+            "tabName": "iFrame Settings",
+            "url": "Url",
+            "width": "Width (px or %)",
+            "height": "Height (px or %)",
+            "border": "Border Style",
+            "borderEg": "Example: '1px solid black' or 'none'"
+          },
+          "canvas": {
+            "tabName": "Canvas",
+            "title": "Select Your Canvas Layout",
+            "blank": "Blank",
+            "blankText": "The iFrame will be rendered on a completley blank page.",
+            "fullWidth": "Full Width",
+            "fullWidthText": "The iFrame will be placed in the middle of a pre-built demo page, which can take up the full width of the page.",
+            "sidebar": "Sidebar",
+            "sidebarText": "The iFrame will be placed in the middle of a pre-built demo page, which can take up the full sidebar of the page.",
+            "currentSelection": "Current Selection",
+            "modes": {
+              "Blank": "Blank",
+              "Full Width": "Full Width",
+              "Sidebar": "Sidebar"
+            }
+          },
+          "export": {
+            "tabName": "Export",
+            "description": "You can share your configuration using the options below. Either copy the URL or scan the QR code to view your setup exactly as you see it.",
+            "alert": "Please note that any changes made by the person opening the link will only apply to their own view, and will not affect your view. Likewise, any changes you make will not be reflected in the shared link.",
+            "option1": "Option 1: Copy the URL",
+            "option2": "Option 2: Scan the QR Code",
+            "shareableUrl": "Shareable URL",
+            "urlHelper": "Use this link to share your configuration.",
+            "qrHelper": "Scan this code with your phone to view the configuration.",
+            "clipboard": "Copy URL to clipboard"
+          }
+        }
+      }
+    }
+  }
+}

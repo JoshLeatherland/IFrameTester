@@ -13,6 +13,7 @@ import { TabContainer } from "../../components";
 import FrameSettings from "./FrameSettings";
 import Export from "./Export";
 import Canvas from "./Canvas";
+import { useTranslation } from "react-i18next";
 
 function SettingsDialog({ open, onClose, settings, setSettings }) {
   const [localSettings, setLocalSettings] = useState(settings);
@@ -37,10 +38,14 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
     onClose();
   };
 
+  const { t, ready } = useTranslation();
+
+  if (!ready) return <div>{t("shared.loading")}</div>;
+
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
       <DialogTitle>
-        Settings
+        {t("pages.settings.title")}
         <IconButton
           aria-label="close"
           onClick={onClose}
@@ -61,7 +66,7 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
                   onEnterKeyDown={handleSettingsSave}
                 />
               ),
-              label: "iFrame Settings",
+              label: t("pages.settings.tabs.iframeSettings.tabName"),
             },
             {
               content: (
@@ -70,13 +75,13 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
                   setSettings={setLocalSettings}
                 />
               ),
-              label: "Canvas",
+              label: t("pages.settings.tabs.canvas.tabName"),
             },
             ...(settings.url
               ? [
                   {
                     content: <Export settings={settings} />,
-                    label: "Export",
+                    label: t("pages.settings.tabs.export.tabName"),
                   },
                 ]
               : []),
@@ -85,10 +90,10 @@ function SettingsDialog({ open, onClose, settings, setSettings }) {
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose} color="secondary">
-          Close
+          {t("shared.close")}
         </Button>
         <Button onClick={handleSettingsSave} color="primary">
-          Save
+          {t("shared.save")}
         </Button>
       </DialogActions>
     </Dialog>

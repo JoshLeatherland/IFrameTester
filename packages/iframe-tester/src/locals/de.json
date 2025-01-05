@@ -1,0 +1,63 @@
+{
+  "translation": {
+    "shared": {
+      "loading": "Laden, bitte warten...",
+      "appTitle": "iFrame Tester",
+      "close": "Schließen",
+      "save": "Speichern"
+    },
+    "languages": {
+      "en": "Englisch",
+      "es": "Spanisch",
+      "fr": "Französisch",
+      "de": "Deutsch"
+    },
+    "pages": {
+      "blankCanvas": {
+        "welcome": "Willkommen in der iFrame-Test-App!",
+        "noFrame": "Es sieht so aus, als hätten Sie noch keine URL zum Testen Ihres iFrames eingerichtet.",
+        "getStarted": "Um zu beginnen, klicken Sie auf das Einstellungssymbol in der oberen rechten Ecke und konfigurieren Sie Ihre URL."
+      },
+      "settings": {
+        "title": "Einstellungen",
+        "tabs": {
+          "iframeSettings": {
+            "tabName": "iFrame-Einstellungen",
+            "url": "URL",
+            "width": "Breite (px oder %)",
+            "height": "Höhe (px oder %)",
+            "border": "Randstil",
+            "borderEg": "Beispiel: '1px solid black' oder 'none'"
+          },
+          "canvas": {
+            "tabName": "Leinwand",
+            "title": "Wählen Sie Ihr Leinwandlayout",
+            "blank": "Leer",
+            "blankText": "Das iFrame wird auf einer vollständig leeren Seite angezeigt.",
+            "fullWidth": "Volle Breite",
+            "fullWidthText": "Das iFrame wird in der Mitte einer vorgefertigten Demoseite platziert, die die volle Breite der Seite einnehmen kann.",
+            "sidebar": "Seitenleiste",
+            "sidebarText": "Das iFrame wird in der Mitte einer vorgefertigten Demoseite platziert, die die gesamte Seitenleiste der Seite einnehmen kann.",
+            "currentSelection": "Aktuelle Auswahl",
+            "modes": {
+              "Blank": "Leer",
+              "Full Width": "Volle Breite",
+              "Sidebar": "Seitenleiste"
+            }
+          },
+          "export": {
+            "tabName": "Exportieren",
+            "description": "Sie können Ihre Konfiguration mit den unten aufgeführten Optionen teilen. Kopieren Sie entweder die URL oder scannen Sie den QR-Code, um Ihre Konfiguration genau so anzuzeigen, wie Sie sie sehen.",
+            "alert": "Bitte beachten Sie, dass Änderungen, die von der Person vorgenommen werden, die den Link öffnet, nur für deren eigene Ansicht gelten und Ihre Ansicht nicht beeinflussen. Ebenso werden Änderungen, die Sie vornehmen, nicht im geteilten Link widergespiegelt.",
+            "option1": "Option 1: URL kopieren",
+            "option2": "Option 2: QR-Code scannen",
+            "shareableUrl": "Teilbare URL",
+            "urlHelper": "Verwenden Sie diesen Link, um Ihre Konfiguration zu teilen.",
+            "qrHelper": "Scannen Sie diesen Code mit Ihrem Telefon, um die Konfiguration anzuzeigen.",
+            "clipboard": "URL in die Zwischenablage kopieren"
+          }
+        }
+      }
+    }
+  }
+}

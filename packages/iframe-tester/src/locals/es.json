@@ -1,0 +1,63 @@
+{
+  "translation": {
+    "shared": {
+      "loading": "Cargando, por favor espera...",
+      "appTitle": "Probador de iFrame",
+      "close": "Cerrar",
+      "save": "Guardar"
+    },
+    "languages": {
+      "en": "Inglés",
+      "es": "Español",
+      "fr": "Francés",
+      "de": "Alemán"
+    },
+    "pages": {
+      "blankCanvas": {
+        "welcome": "¡Bienvenido a la aplicación de prueba de iFrame!",
+        "noFrame": "Parece que aún no has configurado una URL para probar tu iFrame.",
+        "getStarted": "Para comenzar, haz clic en el ícono de Configuración en la esquina superior derecha y configura tu URL."
+      },
+      "settings": {
+        "title": "Configuración",
+        "tabs": {
+          "iframeSettings": {
+            "tabName": "Configuración de iFrame",
+            "url": "URL",
+            "width": "Ancho (px o %)",
+            "height": "Altura (px o %)",
+            "border": "Estilo de Borde",
+            "borderEg": "Ejemplo: '1px solid black' o 'none'"
+          },
+          "canvas": {
+            "tabName": "Lienzo",
+            "title": "Selecciona el diseño de tu lienzo",
+            "blank": "En Blanco",
+            "blankText": "El iFrame se mostrará en una página completamente en blanco.",
+            "fullWidth": "Ancho Completo",
+            "fullWidthText": "El iFrame se colocará en el medio de una página de demostración preconstruida, que puede ocupar todo el ancho de la página.",
+            "sidebar": "Barra Lateral",
+            "sidebarText": "El iFrame se colocará en el medio de una página de demostración preconstruida, que puede ocupar toda la barra lateral de la página.",
+            "currentSelection": "Selección Actual",
+            "modes": {
+              "Blank": "En Blanco",
+              "Full Width": "Ancho Completo",
+              "Sidebar": "Barra Lateral"
+            }
+          },
+          "export": {
+            "tabName": "Exportar",
+            "description": "Puedes compartir tu configuración usando las opciones a continuación. Copia la URL o escanea el código QR para ver tu configuración tal como la ves.",
+            "alert": "Ten en cuenta que cualquier cambio realizado por la persona que abra el enlace solo se aplicará a su propia vista y no afectará tu vista. Del mismo modo, cualquier cambio que hagas no se reflejará en el enlace compartido.",
+            "option1": "Opción 1: Copiar la URL",
+            "option2": "Opción 2: Escanear el Código QR",
+            "shareableUrl": "URL Compartible",
+            "urlHelper": "Usa este enlace para compartir tu configuración.",
+            "qrHelper": "Escanea este código con tu teléfono para ver la configuración.",
+            "clipboard": "Copiar URL al portapapeles"
+          }
+        }
+      }
+    }
+  }
+}

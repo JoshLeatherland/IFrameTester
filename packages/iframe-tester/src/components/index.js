@@ -7,5 +7,6 @@ export { default as EmptyState } from "./EmptyState";
 export { default as ConfirmationDialog } from "./ConfirmationDialog";
 export { default as FullWidthCanvas } from "./FullWidthCanvas";
 export { default as SideBarCanvas } from "./SideBarCanvas";
+export { default as LanguageSelector } from "./LanguageSelector";
 
 export { theme } from "./Theme";

@@ -1,5 +1,6 @@
 import { Grid, TextField, Container } from "@mui/material";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 function FrameSettings({ settings, setSettings, onEnterKeyDown }) {
   const handleFieldUpdate = (field, value) => {
@@ -9,12 +10,16 @@ function FrameSettings({ settings, setSettings, onEnterKeyDown }) {
     }));
   };
 
+  const { t, ready } = useTranslation();
+
+  if (!ready) return <div>{t("shared.loading")}</div>;
+
   return (
     <Container disableGutters>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField
-            label="URL"
+            label={t("pages.settings.tabs.iframeSettings.url")}
             variant="filled"
             fullWidth
             value={settings.url}
@@ -29,7 +34,7 @@ function FrameSettings({ settings, setSettings, onEnterKeyDown }) {
         </Grid>
         <Grid item xs={6}>
           <TextField
-            label="Width (px or %)"
+            label={t("pages.settings.tabs.iframeSettings.width")}
             variant="filled"
             fullWidth
             value={settings.width}
@@ -44,7 +49,7 @@ function FrameSettings({ settings, setSettings, onEnterKeyDown }) {
         </Grid>
         <Grid item xs={6}>
           <TextField
-            label="Height (px or %)"
+            label={t("pages.settings.tabs.iframeSettings.height")}
             variant="filled"
             fullWidth
             value={settings.height}
@@ -59,12 +64,12 @@ function FrameSettings({ settings, setSettings, onEnterKeyDown }) {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            label="Border Style"
+            label={t("pages.settings.tabs.iframeSettings.border")}
             variant="filled"
             fullWidth
             value={settings.border}
             onChange={(e) => handleFieldUpdate("border", e.target.value)}
-            helperText="E.g., '1px solid black'"
+            helperText={t("pages.settings.tabs.iframeSettings.borderEg")}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 e.preventDefault();

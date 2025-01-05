@@ -1,6 +1,11 @@
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 function EmptyState() {
+  const { t, ready } = useTranslation();
+
+  if (!ready) return <div>{t("shared.loading")}</div>;
+
   return (
     <Box
       sx={{
@@ -12,15 +17,10 @@ function EmptyState() {
       }}
     >
       <Typography mt={1} variant="h6">
-        Welcome to the iFrame Testing App!
+        {t("shared.pages.blankCanvas.welcome")}
       </Typography>
-      <Typography mt={1}>
-        It looks like you haven't set up a URL for testing your iFrame yet.
-      </Typography>
-      <Typography mt={1}>
-        To get started, click the Settings icon in the top-right corner and
-        configure your URL.
-      </Typography>
+      <Typography mt={1}>{t("shared.pages.blankCanvas.noFrame")}</Typography>
+      <Typography mt={1}>{t("shared.pages.blankCanvas.getStarted")}</Typography>
     </Box>
   );
 }
