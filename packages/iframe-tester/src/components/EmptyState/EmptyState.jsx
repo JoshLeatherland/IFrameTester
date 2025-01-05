@@ -17,10 +17,10 @@ function EmptyState() {
       }}
     >
       <Typography mt={1} variant="h6">
-        {t("shared.pages.blankCanvas.welcome")}
+        {t("pages.blankCanvas.welcome")}
       </Typography>
-      <Typography mt={1}>{t("shared.pages.blankCanvas.noFrame")}</Typography>
-      <Typography mt={1}>{t("shared.pages.blankCanvas.getStarted")}</Typography>
+      <Typography mt={1}>{t("pages.blankCanvas.noFrame")}</Typography>
+      <Typography mt={1}>{t("pages.blankCanvas.getStarted")}</Typography>
     </Box>
   );
 }
